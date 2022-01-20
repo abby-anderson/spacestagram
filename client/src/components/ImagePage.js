@@ -2,13 +2,21 @@ import React from "react";
 import ImageCard from './ImageCard';
 
 
-function ImagePage ({image}) {
+function ImagePage ({images}) {
+
+    function renderImageCards() {
+        return (
+            images.map(image => {
+                return (
+                    <ImageCard image={image} key={image.title} />
+                )
+            })
+        )
+    }
 
     return (
-        <div>
-            <h1>ImagePage.js here</h1>
-            <ImageCard image={image} />
-
+        <div className="image-container">
+            {renderImageCards()}
         </div>
     )
 }

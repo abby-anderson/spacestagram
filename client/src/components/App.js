@@ -3,24 +3,23 @@ import Header from './Header';
 import ImagePage from './ImagePage';
 
 function App() {
-  const [image, setImage] = useState([]);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.nasa.gov/planetary/apod?api_key=u71Jk7NxmlHqS1XYpPNEHBP0KlqVHqg8qiaWsHpd")
+    fetch("https://api.nasa.gov/planetary/apod?api_key=u71Jk7NxmlHqS1XYpPNEHBP0KlqVHqg8qiaWsHpd&count=100")
     .then(response => response.json())
-    .then(data => setImage(data))
+    .then(data => setImages(data))
   }, [])
 
-  if (!!image) {
-    console.log(image)
+  if (!!images) {
+    console.log(images)
   }
 
 
   return (
     <div className="App">
-      <h1>App.js here</h1>
       <Header/>
-      <ImagePage image={image}/>
+      <ImagePage images={images}/>
     </div>
   );
 }
