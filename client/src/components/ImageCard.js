@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ImageCard ({image}) {
+    const [liked, setLiked] = useState(false)
+
+    function toggleLike () {
+        setLiked(!liked)
+    }
 
     return (
         <div className="image-card">
@@ -9,7 +14,9 @@ function ImageCard ({image}) {
             <p>Captured on {image.date}</p>
             <img src={image.url} />
             <p>{image.explanation}</p>
-            <button>Like</button>
+            {liked === false ? <button onClick={toggleLike}>🖤 Like</button> : <button onClick={toggleLike}>💖 Un-like</button>}
+            
+
         </div>
     )
 }
