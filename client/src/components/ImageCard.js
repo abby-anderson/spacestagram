@@ -9,12 +9,14 @@ function ImageCard ({image}) {
 
     return (
         <div className="image-card">
-            <h2>{image.title}</h2>
+            
+            <h2 id="image-title">{image.title}</h2>
             {image.copyright ? <p>Copyright: {image.copyright}</p> : null}
             <p>Captured on {image.date}</p>
+            
             <img src={image.url} />
-            <p>{image.explanation}</p>
-            {liked === false ? <button onClick={toggleLike}>🖤 Like</button> : <button onClick={toggleLike}>💖 Un-like</button>}
+            <p id="image-description">{image.explanation}</p>
+            {liked === false ? <button onClick={toggleLike}>🖤 Like!</button> : <button onClick={toggleLike}>💖 You liked this!</button>}
             
 
         </div>
