@@ -7,6 +7,11 @@ function ImageCard ({image}) {
         setLiked(!liked)
     }
 
+    function showURL () {
+        console.log(image.url)
+        window.confirm(`Here's the image URL: \n${image.url}`)
+    }
+
     return (
         <div className="image-card">
             
@@ -16,8 +21,11 @@ function ImageCard ({image}) {
             
             <img src={image.url} />
             <p id="image-description">{image.explanation}</p>
-            {liked === false ? <button onClick={toggleLike}>🖤 Like!</button> : <button onClick={toggleLike}>💖 You liked this!</button>}
-            
+
+            <div id="button-zone">
+                <button className="link-button" onClick={showURL}>Get image URL</button>
+                {liked === false ? <button className="like-button" onClick={toggleLike}>🖤 Like!</button> : <button className="like-button" onClick={toggleLike}>💖 You liked this!</button>}
+            </div>
 
         </div>
     )

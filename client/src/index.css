@@ -11,7 +11,6 @@ body {
 }
 
 .header {
-  /* font-family: "Sonder"; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -64,6 +63,25 @@ body {
 
 .image-card h2, p{
   margin: 0px;
+}
+
+.image-card #button-zone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+
+}
+
+.image-card .like-button {
+  align-self: flex-end;
+  margin: 0px 15px 15px 0px;
+}
+
+.image-card .link-button {
+  align-self: flex-start;
+  margin: 0px 0px 15px 15px;
+
 }
 
 .image-card #image-title {
